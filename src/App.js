@@ -1,52 +1,32 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
-import ListItem from "./compoents/ListItems/ListItems";
-// const  App = ()  => {
-//   const greetings = "Hello, Welcome to react app";
+import { React, Component } from "react";
+import Heading from "./compoents/Heading/Heading";
 
-//   return (
-//     <div className="App">
-//       <h1>{greetings}</h1>
-//     </div>
-//   );
-// }
+class App extends Component {
+  // class compnent aka stateful compnents aka smart compnents
+  // lifecycle method (only class compnents have life cycle methods)
 
-class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date(),
-      name: "John",
+      greeting: "Heitinder",
     };
   }
 
-  componentDidMount() {
-    this.timer = setInterval(() => this.tick(), 1000);
-  }
-
-  tick() {
+  updateGreeting(){
     this.setState({
-      date: new Date(),
-    });
+      greeting:'John Doe'
+    })
   }
 
-  updateName() {
-    this.setState({
-      name: "heitinder",
-    });
-  }
-
-  componentWillUnmount(){
-    clearInterval(this.timer);
-  }
+  componentDidMount() {}
 
   render() {
     return (
       <div className="App">
-        <p>{this.state.date.toLocaleTimeString()}</p>
-        <p>{this.state.name}</p>
-        <button onClick={() => this.updateName()}>Change name </button>
+        <Heading greeting={this.state.greeting}></Heading>
+        <button onClick={()=>this.updateGreeting()}>Change Greeting</button>
       </div>
     );
   }
