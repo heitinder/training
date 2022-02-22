@@ -34,3 +34,8 @@ three statge
     - update phase
     - unmount 
         - compnentDidUnmount()
+
+
+Single responsibility principle :  class should have one, and only one, reason to change.
+
+Spread operator is used to merge arrays, object: https://www.javascripttutorial.net/es6/javascript-spread/
