@@ -1,12 +1,11 @@
 const ListItem = (props) => {
-    const handleDelete = (index) => {
-            this.props.students = props.studens.splice(index,1);
-    }
+  const handleDelete = props.handleDelete;
   return (
     <ul>
       {props.students.map((student, index) => (
         <li key={index}>
-          {student} - <button onClick={() => handleDelete(index)}>Delete</button>
+          {student} -{" "}
+          <button onClick={() => handleDelete(index)}>Delete</button>
         </li>
       ))}
     </ul>

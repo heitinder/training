@@ -1,8 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { React, Component } from "react";
-import Heading from "./compoents/Heading/Heading";
-import ListItem from "./compoents/ListItems/ListItems";
+import DataTableContainer from "./compoents/DataTable/DataTableContainer/DataTableContainer";
 
 class App extends Component {
   // class compnent aka stateful compnents aka smart compnents
@@ -14,6 +13,7 @@ class App extends Component {
       greeting: "Heitinder",
       students: [],
     };
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   updateGreeting() {
@@ -35,17 +35,20 @@ class App extends Component {
     document.getElementById("addItem").value = "";
   }
 
+  handleDelete(index) {
+    let newStudents = this.state.students;
+    newStudents.splice(index, 1);
+    this.setState({
+      students: newStudents,
+    });
+  }
+
   componentDidMount() {}
 
   render() {
     return (
       <div className="App">
-        <Heading greeting={this.state.greeting}></Heading>
-        <button onClick={() => this.updateGreeting()}>Change Greeting</button>
-        <ListItem students={this.state.students}></ListItem>
-        <input id="addItem" type="text"></input>
-        <br />
-        <button onClick={() => this.addStudents()}>Add Item</button>
+       <DataTableContainer></DataTableContainer>
       </div>
     );
   }
