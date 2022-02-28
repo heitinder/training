@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
 const DataTableItems = (props) => {
+  const handleDeleteRow = props.handleDeleteRow;
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -42,8 +43,10 @@ const DataTableItems = (props) => {
                   variant="contained"
                   aria-label="outlined primary button group"
                 >
-                  <Button color='primary'>Edit</Button>
-                  <Button color='error'>Delete</Button>
+                  <Button color="primary">Edit</Button>
+                  <Button color="error" onClick={() => handleDeleteRow(index)}>
+                    Delete
+                  </Button>
                 </ButtonGroup>
               </TableCell>
             </TableRow>
