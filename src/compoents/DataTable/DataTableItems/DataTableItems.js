@@ -7,6 +7,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
+import { Link } from "react-router-dom";
 
 const DataTableItems = (props) => {
   const handleDeleteRow = props.handleDeleteRow;
@@ -36,7 +37,9 @@ const DataTableItems = (props) => {
               <TableCell align="right">{row.last_name}</TableCell>
               <TableCell align="right">{row.email}</TableCell>
               <TableCell align="right">
-                <img alt={row.first_name} src={row.avatar} />
+                <Link to={`users/${row.id}`}>
+                  <img alt={row.first_name} src={row.avatar} />
+                </Link>
               </TableCell>
               <TableCell align="right">
                 <ButtonGroup
