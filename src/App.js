@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import DataTableContainer from "./compoents/DataTable/DataTableContainer/DataTableContainer";
 import SingleUser from "./compoents/DataTable/DataTableItems/SingleUser/SingleUser";
 import Timer from './compoents/timer/Timer'
+import Heading from "./compoents/Heading/Heading";
 
 class App extends Component {
   // class compnent aka stateful compnents aka smart compnents
@@ -24,7 +25,7 @@ class App extends Component {
               <Link to="/">Users</Link>
             </li>
             <li>
-              <Link to="/heading">Home</Link>
+              <Link to="/heading">Heading</Link>
             </li>
             <li>
               <Link to="/table">Table</Link>
@@ -39,6 +40,7 @@ class App extends Component {
           <Route path="users" element={<DataTableContainer />} />
           <Route path="users/:id" element={<SingleUser />} />
           <Route path="timer" element={<Timer />} />
+          <Route path="heading" element={<Heading />} />
         </Routes>
       </div>
     );
