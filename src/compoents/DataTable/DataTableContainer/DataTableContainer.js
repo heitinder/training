@@ -18,6 +18,7 @@ class DataTableContainer extends Component {
       ],
     };
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount() {
@@ -42,11 +43,18 @@ class DataTableContainer extends Component {
     this.updateCandidates(newCandidates);
   }
 
+  handleEdit(index) {
+   
+  }
+
   render() {
     return (
       <div>
-        <DataTableItems items={this.state.candidates}
-        handleDeleteRow={this.handleDelete}></DataTableItems>
+        <DataTableItems
+          items={this.state.candidates}
+          handleDeleteRow={this.handleDelete}
+          handleEditUser={this.handleEdit}
+        ></DataTableItems>
       </div>
     );
   }

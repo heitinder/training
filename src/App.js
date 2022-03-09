@@ -6,6 +6,7 @@ import DataTableContainer from "./compoents/DataTable/DataTableContainer/DataTab
 import SingleUser from "./compoents/DataTable/DataTableItems/SingleUser/SingleUser";
 import Timer from './compoents/timer/Timer'
 import Heading from "./compoents/Heading/Heading";
+import EditUser from "./compoents/DataTable/DataTableItems/EditUser/EditUser";
 
 class App extends Component {
   // class compnent aka stateful compnents aka smart compnents
@@ -41,6 +42,7 @@ class App extends Component {
           <Route path="users/:id" element={<SingleUser />} />
           <Route path="timer" element={<Timer />} />
           <Route path="heading" element={<Heading />} />
+          <Route path="edit/:id" element={<EditUser />} />
         </Routes>
       </div>
     );

@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const DataTableItems = (props) => {
   const handleDeleteRow = props.handleDeleteRow;
+  const handleEditUser = props.handleEditUser;
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -46,7 +47,7 @@ const DataTableItems = (props) => {
                   variant="contained"
                   aria-label="outlined primary button group"
                 >
-                  <Button color="primary">Edit</Button>
+                  <Button color="primary" component={Link} to={`edit/${row.id}`} >Edit</Button>
                   <Button color="error" onClick={() => handleDeleteRow(index)}>
                     Delete
                   </Button>
